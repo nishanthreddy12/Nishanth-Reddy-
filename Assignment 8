@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Counter App</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('train.jpg');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+    }
+
+    .container {
+      background-color:greenyellow;
+      padding: 40px;
+      margin: 100px auto;
+      width: 300px;
+      border-radius: 10px;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color:darkorange;
+    }
+
+    button:hover {
+      background-color: #555;
+      color: white;
+    }
+
+    #saved-counts {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Counter App</h1>
+    <h2 id="counter">0</h2>
+    <button onclick="increment()">Increment</button>
+    <button onclick="save()">Save</button>
+    <p>Saved Counts:</p>
+    <div id="saved-counts"></div>
+  </div>
+
+  <script>
+    let count = 0;
+
+    function increment() {
+      count += 1;
+      document.getElementById("counter").textContent = count;
+    }
+
+    function save() {
+      const savedCounts = document.getElementById("saved-counts");
+      savedCounts.textContent += count + " - ";
+      count = 0;
+      document.getElementById("counter").textContent = count;
+    }
+  </script>
+</body>
+</html>
